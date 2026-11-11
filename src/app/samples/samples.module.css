@@ -1,0 +1,77 @@
+/* Transform animations preserve the cards' existing Tailwind rotate/translate values. */
+.patchLeft {
+  animation: patch-float 6s ease-in-out infinite;
+}
+
+.patchCenter {
+  animation: patch-float 5.5s ease-in-out -1.8s infinite;
+}
+
+.patchRight {
+  animation: patch-float 6.5s ease-in-out -3s infinite;
+}
+
+.ring {
+  animation: ring-pulse 3.6s ease-in-out infinite;
+}
+
+@keyframes patch-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes ring-pulse {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(0.97);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .patchLeft,
+  .patchCenter,
+  .patchRight,
+  .ring {
+    animation: none;
+  }
+}
+
+/* Stagger the copy on entry without changing its layout or typography. */
+.bannerCopy > p,
+.bannerCopy > a,
+.headingFirst,
+.headingSecond {
+  animation: copy-reveal 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.headingFirst,
+.headingSecond {
+  display: inline-block;
+}
+
+.bannerCopy > p:first-child { animation-delay: 80ms; }
+.headingFirst { animation-delay: 200ms; }
+.headingSecond { animation-delay: 350ms; }
+.bannerCopy > p:nth-of-type(2) { animation-delay: 500ms; }
+.bannerCopy > a { animation-delay: 650ms; }
+
+/* Keep the link visible immediately if reached by keyboard during entry. */
+.bannerCopy > a:focus-visible { animation: none; }
+
+@keyframes copy-reveal {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bannerCopy > p,
+  .bannerCopy > a,
+  .headingFirst,
+  .headingSecond {
+    animation: none;
+  }
+}

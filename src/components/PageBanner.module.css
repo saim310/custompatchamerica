@@ -1,0 +1,24 @@
+.copy > * {
+  animation: text-enter 750ms cubic-bezier(.22, 1, .36, 1) both;
+}
+.copy > :nth-child(2) { animation-delay: 120ms; }
+.copy > :nth-child(3) { animation-delay: 240ms; }
+.copy > :nth-child(4) { animation-delay: 360ms; }
+.copy > :nth-child(5) { animation-delay: 480ms; }
+.art { animation: image-enter 1100ms cubic-bezier(.22, 1, .36, 1) 200ms both; }
+.float { animation: patch-float 6500ms ease-in-out 1300ms infinite; }
+@keyframes text-enter {
+  from { opacity: 0; transform: translate3d(-28px, 16px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@keyframes image-enter {
+  from { opacity: 0; transform: translate3d(30px, 20px, 0) scale(.9) rotate(-4deg); }
+  to { opacity: 1; transform: translate3d(0, 0, 0) scale(1) rotate(0); }
+}
+@keyframes patch-float {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-12px) rotate(1deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .copy > *, .art, .float { animation: none; }
+}

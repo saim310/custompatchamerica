@@ -1,0 +1,95 @@
+{
+  "generator": "Built-in image_gen",
+  "assets": [
+    {
+      "name": "hero-patches",
+      "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1333a-b9c0-7de3-98b0-d32039cf9c7a\\exec-7175b15d-3b22-4481-8438-ff87dbd28347.png",
+      "prompt": "Premium composition of original military-inspired, outdoor, tiger sports and floral embroidered patches; realistic stitching, transparent background."
+    },
+    {
+      "name": "military-patch",
+      "prompt": "One original military-inspired embroidered insignia patch. Navy, olive and gold winged compass shield, nonofficial artwork, highly realistic raised stitches and thick embroidered border. Centered straight-on, isolated on genuinely transparent alpha background.",
+      "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1333a-b9c0-7de3-98b0-d32039cf9c7a\\exec-a6ddca7c-0828-45c7-9017-2197f23ae3d0.png"
+    },
+    {
+      "name": "biker-patch",
+      "prompt": "One original biker embroidered shield patch featuring a winged motorcycle wheel with subtle red flames. Black, cream and red threads, authentic raised stitching, thick embroidered edge. No real club logos, no text. Centered, isolated on genuinely transparent alpha background.",
+      "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1333a-b9c0-7de3-98b0-d32039cf9c7a\\exec-e80f226d-fa32-4e96-8cd8-27fa9de42942.png"
+    },
+    {
+      "name": "sports-patch",
+      "prompt": "One original sports team tiger mascot shield patch. Rich gold, navy, white and black embroidery, dense lifelike thread texture and clean thick border. Centered, isolated on genuinely transparent alpha background. No text or real logos.",
+      "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1333a-b9c0-7de3-98b0-d32039cf9c7a\\exec-f3e021ad-5bd8-484a-b202-7b500cf8faea.png"
+    },
+    {
+      "name": "why-choose-patch",
+      "prompt": "One intricate colorful embroidered circular patch of a mountain landscape with a burnt-orange sunrise, navy mountains, ivory highlights, green pines and a blue river. Exceptional realistic directional stitching with visible threads, clean merrowed gold edge. Isolated on genuinely transparent alpha background.",
+      "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1333a-b9c0-7de3-98b0-d32039cf9c7a\\exec-944ae651-8f1f-4700-bcbc-e0c03933c55d.png"
+    },
+    {
+      "name": "backing-sew-on",
+      "prompt": "Accurate ecommerce close-up of the REVERSE side of a round embroidered sew-on patch: soft off-white uncoated woven fabric backing, visible bobbin-thread construction, navy stitched outer border. No artwork on the rear, no adhesive film. Angled gently, full patch visible, clean white studio background.",
+      "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1333a-b9c0-7de3-98b0-d32039cf9c7a\\exec-f55bda89-e2ad-4e54-b936-a8c2e5282e41.png"
+    },
+    {
+      "name": "backing-iron-on",
+      "prompt": "Accurate ecommerce close-up of the REVERSE side of a round embroidered iron-on patch: smooth slightly glossy translucent heat-activated adhesive film across the entire rear, navy stitched outer border, fine thread construction faintly visible under film. No peel-off liner. Gently angled, full patch visible, clean white studio background.",
+      "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1333a-b9c0-7de3-98b0-d32039cf9c7a\\exec-5901dcd6-4aa1-415a-8014-e9422fd81bcc.png"
+    },
+    {
+      "name": "backing-adhesive",
+      "prompt": "Accurate ecommerce close-up of the REVERSE side of a navy circular embroidered peel-and-stick patch. White silicone release-paper liner partly peeled back at upper right to reveal tacky flat adhesive underneath. Full patch and curled liner visible, clean white studio background.",
+      "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1333a-b9c0-7de3-98b0-d32039cf9c7a\\exec-26a57313-1da7-4252-afb6-33791941a706.png"
+    },
+    {
+      "name": "backing-velcro",
+      "prompt": "Accurate ecommerce product photograph of a navy round embroidered patch REVERSE with black hook backing, next to a slightly separated matching soft black loop receiving disc. Both discs visible with precise hook and soft fuzzy loop material. Three-quarter angle, white studio background.",
+      "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1333a-b9c0-7de3-98b0-d32039cf9c7a\\exec-b5cc7d55-b633-48f0-a1d4-794edcef8951.png"
+    },
+    {
+      "name": "material-twill",
+      "prompt": "Macro ecommerce photograph of a neatly cut square of navy cotton-polyester TWILL fabric base for embroidered patches. Clear diagonal woven ribs, flat unembroidered material, subtly frayed edges, gently folded corner. Centered on white studio background.",
+      "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1333a-b9c0-7de3-98b0-d32039cf9c7a\\exec-03fe8d45-7e98-4698-9e3d-0dc3b0e46e11.png"
+    },
+    {
+      "name": "border-merrowed",
+      "prompt": "Product macro photograph of an original small round navy embroidered mountain patch with gold and cream thread artwork. Focus on its thick rounded gold overlocked MERROWED BORDER wrapping around the outer edge with dense loop stitches. Full patch visible three-quarter angle, white studio background.",
+      "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1333a-b9c0-7de3-98b0-d32039cf9c7a\\exec-c5a50612-41a2-4595-9534-bff879785fd9.png"
+    },
+    {
+      "name": "border-embroidered",
+      "prompt": "Product macro photograph of an original small shield shaped navy embroidered mountain patch with gold and cream thread artwork. Focus on flat clean gold SATIN STITCH BORDER on the face, narrow stitched edge follows shield shape. Full patch visible three-quarter angle, white studio background.",
+      "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1333a-b9c0-7de3-98b0-d32039cf9c7a\\exec-a39ab6eb-c09b-4288-8339-b0bf07a155a8.png"
+    },
+    {
+      "name": "border-laser-cut",
+      "prompt": "Product macro photograph of an original small irregular mountain-silhouette embroidered patch in navy gold cream. Focus on its thin clean LASER CUT fabric edge following the silhouette without an added decorative stitched or overlocked border. Full patch visible three-quarter angle, white studio background.",
+      "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1333a-b9c0-7de3-98b0-d32039cf9c7a\\exec-4aed81f1-148f-4bc8-a425-5957726984ff.png"
+    },
+    {
+      "name": "craftsmanship-patches",
+      "prompt": "Premium photorealistic arrangement of three original embroidered patches: large central cream and gold eagle with spread wings on navy shield, a smaller richly detailed forest landscape round patch to left, a small red and ivory floral patch below. Raised precise authentic threadwork and fabric depth. Artful gently overlapping centered arrangement. Genuine transparent alpha background. No real brands or text.",
+      "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1333a-b9c0-7de3-98b0-d32039cf9c7a\\exec-e1ebb73e-4a36-4b71-8679-5c1f14952b10.png"
+    },
+    {
+      "name": "navy-textile",
+      "prompt": "Subtle seamless dark navy #0B1C48 textile background, macro fine woven fabric grain, very low contrast, evenly lit flat surface, no objects, no folds, no text. Suitable as quiet full width website background under white headings.",
+      "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1333a-b9c0-7de3-98b0-d32039cf9c7a\\exec-035255c9-f639-42de-9272-c105df6cf53b.png"
+    },
+    {
+      "name": "coverage-50",
+      "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1333a-b9c0-7de3-98b0-d32039cf9c7a\\exec-06bbffcc-e084-4038-89da-040c48f04fcc.png",
+      "prompt": "Use case: scientific-educational product illustration. Create ONE centered straight-on circular embroidered patch for a 50% /75% /100% coverage comparison. This is the 50% version. Identical master design to preserve in later variants: round patch, narrow navy merrowed edge, simple navy triangular mountain range filling the entire lower half with three ivory snowcaps, one small gold sun in upper right. Cream twill background. Approximately 50 percent of the interior is embroidered (the mountain lower half and sun); the upper half sky is visibly unstitched cream twill with diagonal weave. Threadwork is finely directional and visibly raised. No text, no labels, no logos. Centered circle occupies 80% of square image, authentic photorealistic embroidery, genuine transparent alpha background outside the circle. Clear educational distinction between matte flat twill and raised embroidered areas."
+    },
+    {
+      "name": "coverage-75",
+      "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1333a-b9c0-7de3-98b0-d32039cf9c7a\\exec-99602cd3-da3b-4b3f-8db2-dd09eb5e985d.png",
+      "prompt": "Use case: precise-object-edit. This image is the EDIT TARGET, a master artwork for a technical embroidery coverage comparison. Create its 75% embroidery coverage version. Preserve EXACTLY the circle, diameter, framing, narrow navy edge, all three mountain silhouettes and snowcaps, gold sun position and size, camera and lighting, identical artwork colors. Change ONLY the texture of the cream sky: fill the lower half of the existing cream sky area with dense raised cream horizontal embroidery threads; leave the upper half of the sky as clearly visible flat diagonal-woven unstitched twill. This adds about 25% of the whole patch in stitched area, total approximately 75%. Do not add a line or new design element at the texture boundary. Keep the mountain and sun embroidery unchanged. Genuine transparent alpha background outside the patch. No labels, numbers, or text."
+    },
+    {
+      "name": "coverage-100",
+      "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1333a-b9c0-7de3-98b0-d32039cf9c7a\\exec-f12abec1-caf1-4616-ba9f-5bf5bf9944d5.png",
+      "prompt": "Use case: precise-object-edit. This image is the EDIT TARGET, a master artwork for a technical embroidery coverage comparison. Create its 100% embroidery coverage version. Preserve EXACTLY the circle, diameter, framing, narrow navy edge, all three mountain silhouettes and snowcaps, gold sun position and size, camera and lighting, identical artwork colors. Change ONLY the texture of the cream sky: cover ALL the remaining exposed cream twill sky with dense raised cream horizontal embroidery threads, NO exposed twill fabric anywhere in the interior. Entire patch is now fully embroidered, approximately 100% coverage. Keep the mountain and sun embroidery unchanged. Genuine transparent alpha background outside the patch. No labels, numbers, or text."
+    }
+  ]
+}

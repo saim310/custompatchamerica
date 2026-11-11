@@ -1,0 +1,39 @@
+.section {
+  overflow: hidden;
+  background: radial-gradient(ellipse at center, #f0f7ff 0%, #ffffff 78%);
+  padding: 32px 0 24px;
+  color: #0b1c3d;
+}
+.heading { padding: 0 24px; text-align: center; margin-bottom: 30px; }
+.eyebrow { display: inline-flex; align-items: center; gap: 7px; border-radius: 999px; padding: 6px 14px; margin-bottom: 12px; background: #eaf3ff; color: #0963d6; font-size: 11px; font-weight: 750; text-transform: uppercase; }
+.heading h2 { font-size: clamp(23px, 2.1vw, 32px); font-weight: 750; line-height: 1.3; }
+.heading h2 span { color: #0963d6; }
+.heading > p { margin-top: 8px; font-size: 14px; color: #496184; }
+.rows { display: grid; gap: 14px; max-width: 1600px; margin: 0 auto; }
+.viewport { overflow: hidden; }
+.viewport:focus-visible { outline: 2px solid #0963d6; outline-offset: -2px; }
+.track { display: flex; width: max-content; animation: reviews-scroll 65s linear infinite; }
+.reverse { animation-direction: reverse; animation-duration: 72s; }
+.group { display: flex; gap: 14px; padding-right: 14px; }
+.card { position: relative; width: clamp(285px, 23vw, 350px); min-height: 205px; padding: 18px 20px; background: #ffffffed; border: 1px solid #dceaff; border-radius: 12px; box-shadow: 0 6px 22px #2775cd04; }
+.stars { display: flex; gap: 1px; color: #ffba00; }
+.quoteMark { position: absolute; right: 18px; top: 10px; color: #e1eeff; font-family: Georgia, serif; font-size: 80px; line-height: 1; pointer-events: none; }
+.profile { position: relative; display: flex; align-items: center; gap: 12px; margin-top: 10px; }
+.avatar { display: grid; place-items: center; width: 42px; height: 42px; flex-shrink: 0; border-radius: 50%; background: linear-gradient(135deg, #d7eaff, #edf5ff); border: 1px solid #d1e4fb; color: #215c9f; font-size: 13px; font-weight: 750; }
+.card h3 { font-size: 14px; font-weight: 750; line-height: 1.4; }
+.customer { display: flex; align-items: center; gap: 5px; margin-top: 3px; color: #00a554; font-size: 12px; }
+.card blockquote { position: relative; margin-top: 12px; color: #496184; font-size: 13px; font-weight: 400; line-height: 1.5; }
+.paused .track { animation-play-state: paused; }
+.control { display: flex; align-items: center; justify-content: center; gap: 6px; margin: 24px auto 0; padding: 8px 14px; border: 1px solid #b5d4ff; background: #f5f9ff; border-radius: 7px; color: #0963d6; font-size: 12px; cursor: pointer; }
+.control:focus-visible { outline: 2px solid #0963d6; outline-offset: 3px; }
+@keyframes reviews-scroll { to { transform: translateX(-50%); } }
+@media (max-width: 640px) {
+  .section { padding-top: 32px; }
+  .card { width: 285px; min-height: 215px; padding: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .track { animation: none; }
+  .viewport { overflow-x: auto; }
+  .group[aria-hidden="true"] { display: none; }
+  .control { display: none; }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "custompatchamerica",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "test:blog": "node scripts/blog.test.mjs",
+    "migrate:blog": "node scripts/migrate-blog-mongodb.mjs",
+    "test:blog:mongo": "node --env-file-if-exists=.env.local scripts/run-blog-mongo-test.mjs"
+  },
+  "dependencies": {
+    "framer-motion": "^14.1.0",
+    "lucide-react": "^1.52.0",
+    "mongodb": "^7.7.0",
+    "next": "16.3.6",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.6",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

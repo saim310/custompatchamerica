@@ -1,0 +1,10 @@
+import Link from "next/link";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+
+export default function LegalPage({ title, introduction, sections }: { title: string; introduction: string; sections: { heading: string; text: string }[] }) {
+  return <div id="top"><Header servicePage /><main>
+    <header className="bg-[linear-gradient(135deg,#eef5ff,#fff)] px-6 py-14 text-center"><p className="text-xs font-bold uppercase tracking-widest text-[#0963d6]">Custom Patch America</p><h1 className="mt-4 text-4xl font-extrabold tracking-tight sm:text-5xl">{title}</h1><p className="mt-4 text-sm text-[#587092]">Draft for business review</p></header>
+    <article className="mx-auto max-w-[850px] px-6 py-12 sm:py-16"><aside className="mb-8 rounded-xl border border-[#dce8f6] bg-[#f7faff] p-5 text-sm leading-6 text-[#496184]">This policy is a draft. Business details, operational practices, and applicable legal requirements must be confirmed before publication.</aside><p className="text-base leading-8 text-[#496184]">{introduction}</p><nav aria-label="On this page" className="my-8 rounded-2xl bg-[#f7faff] p-6"><h2 className="font-bold">On this page</h2><ul className="mt-3 grid gap-2 sm:grid-cols-2">{sections.map(({ heading }, index) => <li key={heading}><a href={`#section-${index + 1}`} className="text-sm text-[#0963d6] hover:underline">{heading}</a></li>)}</ul></nav><div className="space-y-8">{sections.map(({ heading, text }, index) => <section id={`section-${index + 1}`} key={heading} className="scroll-mt-6"><h2 className="text-xl font-bold">{heading}</h2><p className="mt-3 text-base leading-8 text-[#496184]">{text}</p></section>)}</div><section className="mt-10 border-t border-[#dce8f6] pt-7"><h2 className="text-xl font-bold">Contact us</h2><p className="mt-3 text-base leading-8 text-[#496184]">Questions about this policy? Email <a href="mailto:info@custompatchamerica.com" className="break-all text-[#0963d6] underline">info@custompatchamerica.com</a> or visit our <Link href="/contact-us" className="text-[#0963d6] underline">Contact Us page</Link>.</p></section></article>
+  </main><Footer servicePage /></div>;
+}

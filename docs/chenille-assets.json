@@ -1,0 +1,104 @@
+{
+  "generator": "Built-in image_gen; newly generated for the chenille page, not reference-site downloads.",
+  "reference": "https://americancustompatch.com/chenille-patches",
+  "sharedAssets": [
+    "/images/embroidered/backing-sew-on.webp",
+    "/images/embroidered/backing-iron-on.webp",
+    "/images/embroidered/backing-adhesive.webp",
+    "/images/embroidered/backing-velcro.webp",
+    "/images/embroidered/navy-textile.webp",
+    "Existing shared QuoteSection and Testimonials assets"
+  ],
+  "images": [
+    {
+      "name": "hero",
+      "prompt": "Use case: product-mockup. Asset type: premium custom chenille patch ecommerce website product image. Photorealistic studio macro product photography, richly colored REAL chenille loop-pile acrylic yarn, dense soft raised terrycloth-like yarn with visible individual curly loops, thick felt base and crisp cut felt outline. NOT flat woven fabric, NOT all satin embroidery, NOT plastic or a 3D render. Premium directional softbox lighting reveals tactile depth. Square composition, objects centered, fully visible with 8% margin. Genuinely transparent background with alpha, no floor, no backdrop, no checkerboard, no text labels or watermarks. A striking art-directed arrangement of five distinct varsity chenille patches: a large deep-red varsity letter A with ivory and navy felt layers, a golden five-point star, an emerald lightning bolt, an ivory and cobalt athletic wing, and a small sunset orange circular sunrise badge. Tastefully overlapping yet each silhouette readable, different slight rotations and thicknesses, bold premium school and streetwear collection.",
+      "original": "C:\\Users\\Administrator\\.codex\\generated_images\\01a13356-b08f-78c1-920c-90382ec3c2b7\\exec-b55b5d6b-4805-4ec0-9e43-a02e7987ef93.png",
+      "file": "public/images/chenille/hero.webp"
+    },
+    {
+      "name": "school-varsity",
+      "prompt": "Use case: product-mockup. Asset type: premium custom chenille patch ecommerce website product image. Photorealistic studio macro product photography, richly colored REAL chenille loop-pile acrylic yarn, dense soft raised terrycloth-like yarn with visible individual curly loops, thick felt base and crisp cut felt outline. NOT flat woven fabric, NOT all satin embroidery, NOT plastic or a 3D render. Premium directional softbox lighting reveals tactile depth. Square composition, objects centered, fully visible with 8% margin. Genuinely transparent background with alpha, no floor, no backdrop, no checkerboard, no text labels or watermarks. One oversized ruby-red varsity letter V chenille patch, layered cream and midnight-navy felt border, a smaller rich golden chenille achievement star tucked behind its lower right edge. Proud collegiate design, three-quarter overhead camera, dense raised yarn, luxe realistic construction.",
+      "original": "C:\\Users\\Administrator\\.codex\\generated_images\\01a13356-b08f-78c1-920c-90382ec3c2b7\\exec-2875d043-a93a-423f-a641-dd5f3cd6b88a.png",
+      "file": "public/images/chenille/school-varsity.webp"
+    },
+    {
+      "name": "fashion-streetwear",
+      "prompt": "Use case: product-mockup. Asset type: premium custom chenille patch ecommerce website product image. Photorealistic studio macro product photography, richly colored REAL chenille loop-pile acrylic yarn, dense soft raised terrycloth-like yarn with visible individual curly loops, thick felt base and crisp cut felt outline. NOT flat woven fabric, NOT all satin embroidery, NOT plastic or a 3D render. Premium directional softbox lighting reveals tactile depth. Square composition, objects centered, fully visible with 8% margin. Genuinely transparent background with alpha, no floor, no backdrop, no checkerboard, no text labels or watermarks. One custom sculpted flame-shaped chenille streetwear patch. Vivid coral-orange outer flame, golden-yellow inner flame, vivid turquoise base shape, layered midnight-blue and cream felt silhouette. Bold modern fashion design, mostly straight overhead with subtle visible thickness.",
+      "original": "C:\\Users\\Administrator\\.codex\\generated_images\\01a13356-b08f-78c1-920c-90382ec3c2b7\\exec-ec94b20c-cffe-4bfa-9705-495e487f0a3c.png",
+      "file": "public/images/chenille/fashion-streetwear.webp"
+    },
+    {
+      "name": "team-club",
+      "prompt": "Use case: product-mockup. Asset type: premium custom chenille patch ecommerce website product image. Photorealistic studio macro product photography, richly colored REAL chenille loop-pile acrylic yarn, dense soft raised terrycloth-like yarn with visible individual curly loops, thick felt base and crisp cut felt outline. NOT flat woven fabric, NOT all satin embroidery, NOT plastic or a 3D render. Premium directional softbox lighting reveals tactile depth. Square composition, objects centered, fully visible with 8% margin. Genuinely transparent background with alpha, no floor, no backdrop, no checkerboard, no text labels or watermarks. A premium shield-shaped sports-club chenille patch with large deep emerald plush central five-point star, mustard-gold plush field and navy felt layers, two small ivory plush chevrons at bottom. No lettering, no words. Strong memorable varsity team identity, realistic loop yarn not stitched flat logo.",
+      "original": "C:\\Users\\Administrator\\.codex\\generated_images\\01a13356-b08f-78c1-920c-90382ec3c2b7\\exec-223f49a9-8922-4cb1-9463-bd7eeef4ef85.png",
+      "file": "public/images/chenille/team-club.webp"
+    },
+    {
+      "name": "why-choose",
+      "prompt": "Use case: product-mockup. Asset type: premium custom chenille patch ecommerce website product image. Photorealistic studio macro product photography, richly colored REAL chenille loop-pile acrylic yarn, dense soft raised terrycloth-like yarn with visible individual curly loops, thick felt base and crisp cut felt outline. NOT flat woven fabric, NOT all satin embroidery, NOT plastic or a 3D render. Premium directional softbox lighting reveals tactile depth. Square composition, objects centered, fully visible with 8% margin. Genuinely transparent background with alpha, no floor, no backdrop, no checkerboard, no text labels or watermarks. Three premium chenille patches in a tightly balanced overlapping diagonal composition: large ivory and navy varsity letter C, a red and golden layered lightning bolt, and a rich emerald five-point star on cream felt. Slight three-quarter perspective emphasizes raised plush loops and layered thickness. Larger hero-quality product details, no extras.",
+      "original": "C:\\Users\\Administrator\\.codex\\generated_images\\01a13356-b08f-78c1-920c-90382ec3c2b7\\exec-09ad17bd-a6bf-4516-b589-440557cf26bd.png",
+      "file": "public/images/chenille/why-choose.webp"
+    },
+    {
+      "name": "material-felt",
+      "prompt": "Use case: product-mockup. Asset type: premium custom chenille patch ecommerce website product image. Photorealistic studio macro product photography, richly colored REAL chenille loop-pile acrylic yarn, dense soft raised terrycloth-like yarn with visible individual curly loops, thick felt base and crisp cut felt outline. NOT flat woven fabric, NOT all satin embroidery, NOT plastic or a 3D render. Premium directional softbox lighting reveals tactile depth. Square composition, objects centered, fully visible with 8% margin. Genuinely transparent background with alpha, no floor, no backdrop, no checkerboard, no text labels or watermarks. An informative product photo of three staggered thick felt square fabric swatches with softly rounded corners in ivory, crimson and navy. Upper ivory swatch has a small raised golden chenille yarn star sample attached, showing the thick soft fuzzy felt foundation clearly exposed around it. Three-quarter macro view emphasizes compressed felt edge layers, NOT woven linen.",
+      "original": "C:\\Users\\Administrator\\.codex\\generated_images\\01a13356-b08f-78c1-920c-90382ec3c2b7\\exec-5b1fb623-4d5d-438b-ae26-c1f657c98a3e.png",
+      "file": "public/images/chenille/material-felt.webp"
+    },
+    {
+      "name": "material-polyester-twill",
+      "prompt": "Use case: product-mockup. Asset type: premium custom chenille patch ecommerce website product image. Photorealistic studio macro product photography, richly colored REAL chenille loop-pile acrylic yarn, dense soft raised terrycloth-like yarn with visible individual curly loops, thick felt base and crisp cut felt outline. NOT flat woven fabric, NOT all satin embroidery, NOT plastic or a 3D render. Premium directional softbox lighting reveals tactile depth. Square composition, objects centered, fully visible with 8% margin. Genuinely transparent background with alpha, no floor, no backdrop, no checkerboard, no text labels or watermarks. An informative macro product photo of a single navy polyester twill rounded-square swatch with visible fine diagonal twill weave and a small ruby-red raised chenille circular sample on one half, leaving the other half bare to show the durable twill support fabric. Cream felt stabilizing layer visible underneath, angled overhead camera. Distinguish flat twill base from fluffy raised yarn.",
+      "original": "C:\\Users\\Administrator\\.codex\\generated_images\\01a13356-b08f-78c1-920c-90382ec3c2b7\\exec-56b652ed-5c59-42d0-ad86-ed142a24e84f.png",
+      "file": "public/images/chenille/material-polyester-twill.webp"
+    },
+    {
+      "name": "material-acrylic-yarn",
+      "prompt": "Use case: product-mockup. Asset type: premium custom chenille patch ecommerce website product image. Photorealistic studio macro product photography, richly colored REAL chenille loop-pile acrylic yarn, dense soft raised terrycloth-like yarn with visible individual curly loops, thick felt base and crisp cut felt outline. NOT flat woven fabric, NOT all satin embroidery, NOT plastic or a 3D render. Premium directional softbox lighting reveals tactile depth. Square composition, objects centered, fully visible with 8% margin. Genuinely transparent background with alpha, no floor, no backdrop, no checkerboard, no text labels or watermarks. A product material macro showing a plush square sample of dense golden-yellow loop-pile acrylic chenille yarn on thin ivory felt, alongside one small loose curled length of matching acrylic yarn. Extremely tactile soft raised fuzzy terrycloth-like loops clearly separated, warm golden color, slight three-quarter overhead view, all objects fit.",
+      "original": "C:\\Users\\Administrator\\.codex\\generated_images\\01a13356-b08f-78c1-920c-90382ec3c2b7\\exec-d2a44fe6-c63d-4c55-93ff-5b4c7e1377c3.png",
+      "file": "public/images/chenille/material-acrylic-yarn.webp"
+    },
+    {
+      "name": "border-merrowed",
+      "prompt": "Use case: product-mockup. Asset type: premium custom chenille patch ecommerce website product image. Photorealistic studio macro product photography, richly colored REAL chenille loop-pile acrylic yarn, dense soft raised terrycloth-like yarn with visible individual curly loops, thick felt base and crisp cut felt outline. NOT flat woven fabric, NOT all satin embroidery, NOT plastic or a 3D render. Premium directional softbox lighting reveals tactile depth. Square composition, objects centered, fully visible with 8% margin. Genuinely transparent background with alpha, no floor, no backdrop, no checkerboard, no text labels or watermarks. One round premium chenille patch with an emerald plush center and simple raised ivory star. Show a thick rounded navy overlocked MERROWED edge all around the perimeter, tightly wrapped thread forming a tubular rope-like rim. Slight three-quarter macro angle foreground edge especially clear. Whole patch visible.",
+      "original": "C:\\Users\\Administrator\\.codex\\generated_images\\01a13356-b08f-78c1-920c-90382ec3c2b7\\exec-0405c601-5d17-4e66-91bd-fc58acee6d08.png",
+      "file": "public/images/chenille/border-merrowed.webp"
+    },
+    {
+      "name": "border-heat-cut",
+      "prompt": "Use case: product-mockup. Asset type: premium custom chenille patch ecommerce website product image. Photorealistic studio macro product photography, richly colored REAL chenille loop-pile acrylic yarn, dense soft raised terrycloth-like yarn with visible individual curly loops, thick felt base and crisp cut felt outline. NOT flat woven fabric, NOT all satin embroidery, NOT plastic or a 3D render. Premium directional softbox lighting reveals tactile depth. Square composition, objects centered, fully visible with 8% margin. Genuinely transparent background with alpha, no floor, no backdrop, no checkerboard, no text labels or watermarks. One rounded rectangular premium chenille patch with a rich crimson plush center and a broad ivory plush lightning bolt. Navy polyester felt perimeter has a narrow smooth heat-sealed cut edge, flat and clean, absolutely no thick rolled or merrowed outer border. Angled macro product photography emphasizes thin sealed edge. Whole patch visible.",
+      "original": "C:\\Users\\Administrator\\.codex\\generated_images\\01a13356-b08f-78c1-920c-90382ec3c2b7\\exec-e9069d27-ddc2-422d-9519-d4f1d8b59b12.png",
+      "file": "public/images/chenille/border-heat-cut.webp"
+    },
+    {
+      "name": "border-laser-cut",
+      "prompt": "Use case: product-mockup. Asset type: premium custom chenille patch ecommerce website product image. Photorealistic studio macro product photography, richly colored REAL chenille loop-pile acrylic yarn, dense soft raised terrycloth-like yarn with visible individual curly loops, thick felt base and crisp cut felt outline. NOT flat woven fabric, NOT all satin embroidery, NOT plastic or a 3D render. Premium directional softbox lighting reveals tactile depth. Square composition, objects centered, fully visible with 8% margin. Genuinely transparent background with alpha, no floor, no backdrop, no checkerboard, no text labels or watermarks. One custom silhouette premium chenille patch shaped as a five-point gold star with a small connected turquoise lightning extension, with a precise slim navy laser-cut felt outline following every angular contour. Raised plush yarn sits inset from smooth flat cut border, absolutely no thick rolled or merrowed outer edge. Whole patch visible.",
+      "original": "C:\\Users\\Administrator\\.codex\\generated_images\\01a13356-b08f-78c1-920c-90382ec3c2b7\\exec-44e906de-04e3-4443-8721-e5207da2cf3d.png",
+      "file": "public/images/chenille/border-laser-cut.webp"
+    },
+    {
+      "name": "style-full-chenille",
+      "prompt": "Use case: product-mockup. Asset type: premium custom chenille patch ecommerce website product image. Photorealistic studio macro product photography, richly colored REAL chenille loop-pile acrylic yarn, dense soft raised terrycloth-like yarn with visible individual curly loops, thick felt base and crisp cut felt outline. NOT flat woven fabric, NOT all satin embroidery, NOT plastic or a 3D render. Premium directional softbox lighting reveals tactile depth. Square composition, objects centered, fully visible with 8% margin. Genuinely transparent background with alpha, no floor, no backdrop, no checkerboard, no text labels or watermarks. A single bold five-point star-shaped chenille patch, full face covered in dense soft raised golden-yellow loop-pile yarn, cobalt-blue felt inset outline and ivory outer felt silhouette. All interior surface plush chenille, no embroidered artwork. Slight tilt toward camera shows plush height. Simple beautiful full-chenille style example.",
+      "original": "C:\\Users\\Administrator\\.codex\\generated_images\\01a13356-b08f-78c1-920c-90382ec3c2b7\\exec-34ed7a97-0b63-4437-b119-295deae35983.png",
+      "file": "public/images/chenille/style-full-chenille.webp"
+    },
+    {
+      "name": "style-chenille-embroidery",
+      "prompt": "Use case: product-mockup. Asset type: premium custom chenille patch ecommerce website product image. Photorealistic studio macro product photography, richly colored REAL chenille loop-pile acrylic yarn, dense soft raised terrycloth-like yarn with visible individual curly loops, thick felt base and crisp cut felt outline. NOT flat woven fabric, NOT all satin embroidery, NOT plastic or a 3D render. Premium directional softbox lighting reveals tactile depth. Square composition, objects centered, fully visible with 8% margin. Genuinely transparent background with alpha, no floor, no backdrop, no checkerboard, no text labels or watermarks. A single premium round patch whose entire main face is vivid emerald-green plush chenille. On the raised field a small ivory satin-embroidered laurel wreath surrounds a bold golden-yellow chenille star. Small embroidered accents are visibly thin smooth thread, contrasted with overwhelmingly plush raised chenille body. Layered cream/navy felt edge. No text.",
+      "original": "C:\\Users\\Administrator\\.codex\\generated_images\\01a13356-b08f-78c1-920c-90382ec3c2b7\\exec-90efd14a-2fff-4c39-89b8-cfe165abb1e9.png",
+      "file": "public/images/chenille/style-chenille-embroidery.webp"
+    },
+    {
+      "name": "style-mixed-design",
+      "prompt": "Use case: product-mockup. Asset type: premium custom chenille patch ecommerce website product image. Photorealistic studio macro product photography, richly colored REAL chenille loop-pile acrylic yarn, dense soft raised terrycloth-like yarn with visible individual curly loops, thick felt base and crisp cut felt outline. NOT flat woven fabric, NOT all satin embroidery, NOT plastic or a 3D render. Premium directional softbox lighting reveals tactile depth. Square composition, objects centered, fully visible with 8% margin. Genuinely transparent background with alpha, no floor, no backdrop, no checkerboard, no text labels or watermarks. A single shield patch demonstrating mixed chenille and embroidery. A huge ruby-red raised chenille varsity letter M occupies the center, behind it flat navy embroidered fabric background with fine golden embroidered rays and small ivory stitched stars. Cream felt outline. Dominant puffy chenille letter contrasted clearly with flat supporting embroidered details, premium realistic.",
+      "original": "C:\\Users\\Administrator\\.codex\\generated_images\\01a13356-b08f-78c1-920c-90382ec3c2b7\\exec-dbbd5bdb-ee04-48bd-96ab-0b23e033b137.png",
+      "file": "public/images/chenille/style-mixed-design.webp"
+    },
+    {
+      "name": "story",
+      "prompt": "Use case: product-mockup. Asset type: premium custom chenille patch ecommerce website product image. Photorealistic studio macro product photography, richly colored REAL chenille loop-pile acrylic yarn, dense soft raised terrycloth-like yarn with visible individual curly loops, thick felt base and crisp cut felt outline. NOT flat woven fabric, NOT all satin embroidery, NOT plastic or a 3D render. Premium directional softbox lighting reveals tactile depth. Square composition, objects centered, fully visible with 8% margin. Genuinely transparent background with alpha, no floor, no backdrop, no checkerboard, no text labels or watermarks. Rich premium product collection collage arranged organically with a little overlap: oversized ruby varsity R with ivory felt, emerald plush star, cobalt chenille athletic shield with gold accents, orange and ivory sunburst circle, golden lightning silhouette, burgundy plush heart, ivory letter A on navy felt. Varied shapes and scales, intricate tactile raised chenille loops, layered felt edges, balanced exciting composition, all seven patches readable, no extra props, no garments, no text besides the specified varsity letters.",
+      "original": "C:\\Users\\Administrator\\.codex\\generated_images\\01a13356-b08f-78c1-920c-90382ec3c2b7\\exec-443e3c7b-0c81-49b4-9d80-5bae26ecffa1.png",
+      "file": "public/images/chenille/story.webp"
+    }
+  ]
+}

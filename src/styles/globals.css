@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+/* Match plain :hover (Tailwind v4 defaults to hover-capable devices only). */
+@custom-variant hover (&:hover);
+
+@theme inline {
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+@theme {
+  --color-navy: #061b3d;
+  --color-brand-red: #e51c2a;
+}
+
+@utility section-heading {
+  @apply text-[27px] md:text-[34px] lg:text-[40px] font-bold leading-[1.2] tracking-[-0.025em];
+}
+
+@utility section-spacing {
+  @apply px-4 sm:px-6 py-12 md:py-16 lg:py-24;
+}
+
+@utility section-copy {
+  @apply text-[15px] md:text-[16px] leading-[1.6];
+}

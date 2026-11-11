@@ -1,0 +1,69 @@
+{
+  "reference": "https://americancustompatch.com/woven-patches",
+  "reused": [
+    {
+      "file": "hero.webp",
+      "source": "/images/woven/hero.webp"
+    },
+    {
+      "file": "branding.webp",
+      "source": "/images/woven/WOV-B&Logo.webp"
+    },
+    {
+      "file": "fashion.webp",
+      "source": "/images/woven/WOV-F&Life.webp"
+    },
+    {
+      "file": "team.webp",
+      "source": "/images/woven/WOV-Team.webp"
+    },
+    {
+      "file": "story.webp",
+      "source": "/images/woven/last.webp"
+    }
+  ],
+  "shared": "Four backing images and navy textile background reused from public/images/embroidered.",
+  "generated": [
+    {
+      "file": "public/images/woven/polyester-base-woven.webp",
+      "tool": "Built-in image_gen",
+      "prompt": "Fine ivory woven polyester base fabric swatch, tiny interlaced warp and weft, folded corner, pure white background; no embroidery or lettering."
+    },
+    {
+      "file": "public/images/woven/fine-thread-woven.webp",
+      "tool": "Built-in image_gen",
+      "prompt": "Use case: product-mockup. Website asset fine-thread. Generate ONE premium photorealistic product photograph: a folded strip of fine navy and ivory jacquard woven fabric with a subtle small geometric pattern, visible tiny interlacing threads in a smooth flat surface; close macro view of the textile construction; pure white studio background. Materials: actual finely interlaced polyester warp and weft threads, dense flat matte jacquard woven textile, subtle visible microtexture. This must look WOVEN, not embroidered: no raised satin stitching, no chunky yarn, no embroidery fill, no 3D thread outlines. Consistent soft studio lighting. Original designs, no real brands, no watermark, no text. Square composition."
+    },
+    {
+      "file": "public/images/woven/fine-weave.webp",
+      "tool": "Built-in image_gen",
+      "prompt": "Use case: product-mockup. Website asset fine. Generate ONE premium photorealistic product photograph: a round ivory woven patch with a simple navy mountain silhouette and a small orange sun, a smooth flat woven face, clean thin sealed edge; front view centered on pure white studio background, 12% margin. Materials: actual finely interlaced polyester warp and weft threads, dense flat matte jacquard woven textile, subtle visible microtexture. This must look WOVEN, not embroidered: no raised satin stitching, no chunky yarn, no embroidery fill, no 3D thread outlines. Consistent soft studio lighting. Original designs, no real brands, no watermark, no text. Square composition."
+    },
+    {
+      "file": "public/images/woven/balanced-weave.webp",
+      "tool": "Built-in image_gen",
+      "prompt": "Use case: product-mockup. Website asset balanced. Generate ONE premium photorealistic product photograph: a round ivory woven patch with a navy mountain landscape, pine trees and orange sun with moderate detail, smooth flat jacquard woven face, clean thin sealed edge; front view centered on pure white studio background, 12% margin. Materials: actual finely interlaced polyester warp and weft threads, dense flat matte jacquard woven textile, subtle visible microtexture. This must look WOVEN, not embroidered: no raised satin stitching, no chunky yarn, no embroidery fill, no 3D thread outlines. Consistent soft studio lighting. Original designs, no real brands, no watermark, no text. Square composition."
+    },
+    {
+      "file": "public/images/woven/high-detail-weave.webp",
+      "tool": "Built-in image_gen",
+      "prompt": "Use case: product-mockup. Website asset high-detail. Generate ONE premium photorealistic product photograph: a round ivory woven patch with a richly detailed navy mountain landscape, fine contour lines, tiny pine trees, orange sun and a delicate geometric perimeter, flat jacquard woven face, thin sealed edge; front view centered on pure white studio background, 12% margin. Materials: actual finely interlaced polyester warp and weft threads, dense flat matte jacquard woven textile, subtle visible microtexture. This must look WOVEN, not embroidered: no raised satin stitching, no chunky yarn, no embroidery fill, no 3D thread outlines. Consistent soft studio lighting. Original designs, no real brands, no watermark, no text. Square composition."
+    },
+    {
+      "file": "public/images/woven/why-choose-woven.webp",
+      "tool": "Built-in image_gen",
+      "prompt": "Use case: product-mockup. Website asset why-choose. Generate ONE premium photorealistic product photograph: a premium navy and ivory shield shaped woven patch featuring an original detailed compass rose and fine geometric linework with tiny orange accents, smooth flat woven face and thin clean sealed edge. Single patch filling 78% of a square image, nearly frontal product photo. Perfectly uniform solid #00ff00 chroma key background for removal, no shadow, no gradient, no green in subject. Materials: actual finely interlaced polyester warp and weft threads, dense flat matte jacquard woven textile, subtle visible microtexture. This must look WOVEN, not embroidered: no raised satin stitching, no chunky yarn, no embroidery fill, no 3D thread outlines. Consistent soft studio lighting. Original designs, no real brands, no watermark, no text. Square composition."
+    },
+    {
+      "file": "public/images/woven/heat-cut.webp",
+      "tool": "Built-in image_gen",
+      "prompt": "Use case: product-mockup. Product photograph for woven patch edge option card: a rounded rectangular ivory woven patch with flat navy geometric mountain artwork. Macro oblique view focusing on the clean narrow heat-sealed fabric edge: about 0.3mm thick and no thread wrapping or satin stitching around the perimeter. Fine smooth jacquard woven polyester face, subtle tiny perpendicular interlaced threads, no embroidered elements, no raised threadwork, no merrowed border, no border roll. Pure white background, soft studio light. Full object visible centered with 12% padding, square composition. No text, watermark or brand."
+    },
+    {
+      "file": "public/images/woven/laser-cut.webp",
+      "tool": "Built-in image_gen",
+      "prompt": "Use case: product-mockup. Product photograph for woven patch edge option card: an irregular custom silhouette woven patch with flat navy and ivory mountain peaks and pine tree outlines, laser cut precisely around the peaks and trees. Macro product view of the thin fused textile edge: about 0.3mm thick and absolutely no sewn or overlocked perimeter. Fine smooth jacquard woven polyester face, subtle tiny perpendicular interlaced threads, no embroidered elements, no raised threadwork, no merrowed border, no border roll. Pure white background, soft studio light. Full object visible centered with 12% padding, square composition. No text, watermark or brand."
+    }
+  ],
+  "referenceSamplesReplaced": "Downloaded material, weave-detail and Why Choose samples are retained under artifacts/woven/reference-assets for reference only; woven-specific generated replacements are used on the page."
+}
