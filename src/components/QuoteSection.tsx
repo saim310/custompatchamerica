@@ -1,5 +1,6 @@
 "use client";
 
+import { submitEnquiry } from "@/lib/attribution-client";
 import { useState, type FormEvent } from "react";
 import Image from "next/image";
 import { ArrowRight, Box, Check, ChevronDown, FileText, Layers, Mail, ShieldCheck, UserRound } from "lucide-react";
@@ -38,7 +39,7 @@ export default function QuoteSection() {
     setPending(true);
     setNotice("");
     try {
-      const response = await fetch("/api/quotes", { method: "POST", body: data });
+      const response = await submitEnquiry(data);
       const result = await response.json();
       if (!response.ok) setNotice(Object.values(result.errors ?? {}).join(" ") || result.error || "Please try again later.");
       else { setSuccessReference(result.id); form.reset(); }

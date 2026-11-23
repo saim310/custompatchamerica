@@ -1,5 +1,6 @@
 "use client";
 
+import { submitEnquiry } from "@/lib/attribution-client";
 import { useState, type FormEvent } from "react";
 import { ArrowRight } from "lucide-react";
 import { PATCH_TYPES, type QuoteErrors } from "@/lib/quote-validation";
@@ -21,7 +22,7 @@ export default function ContactForm() {
     setErrors({});
     setSuccess(false);
     try {
-      const response = await fetch("/api/quotes", { method: "POST", body: new FormData(form) });
+      const response = await submitEnquiry(new FormData(form));
       const result = await response.json();
       if (!response.ok) {
         setErrors(result.errors ?? {});

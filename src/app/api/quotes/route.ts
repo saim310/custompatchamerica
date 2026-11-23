@@ -1,6 +1,7 @@
 import { randomUUID, createHash } from "node:crypto";
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { attributionEmail } from "@/lib/attribution";
 import { MAX_QUOTE_BYTES, validArtworkSignature, validateQuote } from "@/lib/quote-validation";
 
 export const runtime = "nodejs";
@@ -58,7 +59,9 @@ export async function POST(request: Request) {
       const from = process.env.RESEND_FROM_EMAIL?.trim();
       const to = process.env.RESEND_TO_EMAIL?.split(",").map(value => value.trim()).filter(Boolean);
       if (!key || !from || !to?.length) return reply({ error: "Online requests are temporarily unavailable. Please try again later." }, 503);
-      const text = Object.entries({ reference: id, submitted: createdAt, source, ...details }).map(([label, value]) => label + ": " + value).join("\n\n");
+      const customerDetails = Object.entries({ reference: id, submitted: createdAt, source, ...details })
+        .map(([label, value]) => label + ": " + value).join("\n\n");
+      const text = customerDetails + "\n\n" + attributionEmail(form.get("attribution"), expectedOrigin, createdAt);
       const response = await fetch("https://api.resend.com/emails", {
         method: "POST", redirect: "error", signal: AbortSignal.timeout(15000),
         headers: { Authorization: "Bearer " + key, "Content-Type": "application/json", "Idempotency-Key": id },

@@ -1,5 +1,6 @@
 "use client";
 
+import { submitEnquiry } from "@/lib/attribution-client";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState, type FormEvent } from "react";
@@ -102,7 +103,7 @@ export default function QuotePopup() {
     setNotice("");
     setErrors({});
     try {
-      const response = await fetch("/api/quotes", { method: "POST", body });
+      const response = await submitEnquiry(body);
       const result = await response.json();
       if (!response.ok || typeof result.id !== "string") {
         setErrors(result.errors ?? {});

@@ -1,3 +1,4 @@
+import AttributionPreferences from "@/components/AttributionPreferences";
 import type { Metadata } from "next";
 import LegalPage from "@/components/LegalPage";
 export const metadata: Metadata = { title: "Privacy Policy | Custom Patch America", description: "Information about personal information submitted to Custom Patch America.", robots: { index: false, follow: true } };
@@ -10,4 +11,4 @@ const sections = [
   { heading: "Your requests and choices", text: "Contact us to ask about information you have submitted or request correction or deletion. The rights and response procedures that apply depend on your location and applicable law. Any legally required retention or identity verification should be explained when handling your request." },
   { heading: "Policy updates", text: "The final policy should include its effective date and describe how material changes will be communicated. Any changes should reflect the website's actual information practices." },
 ];
-export default function PrivacyPage() { return <LegalPage title="Privacy Policy" introduction="This draft describes information submitted through the Custom Patch America website and identifies operational details that need confirmation before the policy is finalized." sections={sections} />; }
+export default function PrivacyPage() { return <LegalPage title="Privacy Policy" introduction="This draft describes information submitted through the Custom Patch America website and identifies operational details that need confirmation before the policy is finalized." sections={sections}><AttributionPreferences /></LegalPage>; }

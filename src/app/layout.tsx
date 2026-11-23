@@ -1,5 +1,6 @@
-import type { ReactNode } from "react";
+import { Suspense, type ReactNode } from "react";
 import type { Metadata } from "next";
+import AttributionTracker from "@/components/AttributionTracker";
 import QuotePopup from "@/components/QuotePopup";
 import "@/styles/globals.css";
 
@@ -12,6 +13,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className="scroll-smooth">
       <body className="bg-white font-sans text-[14px] text-navy max-[650px]:text-[13px]">
+        <Suspense fallback={null}><AttributionTracker /></Suspense>
         {children}
         <QuotePopup />
         <a

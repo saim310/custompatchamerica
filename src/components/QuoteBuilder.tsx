@@ -1,5 +1,6 @@
 "use client";
 
+import { submitEnquiry } from "@/lib/attribution-client";
 import Image from "next/image";
 import { useState, type FormEvent } from "react";
 import { Upload, ArrowRight } from "lucide-react";
@@ -59,7 +60,7 @@ export default function QuoteBuilder() {
     if (Object.keys(validation.errors).length) { setNotice("Please check the following details before submitting."); return; }
     setPending(true);
     try {
-      const response = await fetch("/api/quotes", { method: "POST", body: data });
+      const response = await submitEnquiry(data);
       const result = await response.json();
       if (!response.ok) { setErrors(result.errors ?? {}); setNotice(result.error || "Your request could not be sent. Please try again."); }
       else { setSuccess(true); setNotice(`${result.message} Reference: ${result.id}`); }
