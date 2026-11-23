@@ -83,23 +83,26 @@ function trafficSource(touch?: Touch): string {
   const tags = touch.campaign;
   const source = tags.utm_source?.toLowerCase();
   const medium = tags.utm_medium?.toLowerCase();
+  const instagram = source === "instagram" || source === "ig";
   const paid = /^(cpc|ppc|cpm|paid([ _-](social|search|media))?|ads|display)$/.test(medium ?? "");
   if (tags.gclid || tags.gbraid || tags.wbraid || (paid && /^(google|google[ _-]?ads)$/.test(source ?? ""))) return "Google Ads";
   if (tags.msclkid || (paid && /^(bing|microsoft|microsoft[ _-]?ads)$/.test(source ?? ""))) return "Bing Ads";
   if (tags.ttclid || (paid && /^(tiktok|tik[ _-]tok)$/.test(source ?? ""))) return "TikTok Ads";
   if (paid && /^(facebook|fb|instagram|ig|meta)$/.test(source ?? "")) {
     if (source === "facebook" || source === "fb") return "Facebook Ads";
-    if (source === "instagram" || source === "ig") return "Instagram Ads";
+    if (instagram) return "Instagram Ads";
     return "Meta Ads";
   }
   if (/^(e[ _-]?mail|newsletter)$/.test(medium ?? "") || /^(e[ _-]?mail|newsletter)$/.test(source ?? "")) return "Email Marketing";
   if (medium === "organic" && source === "google") return "Google Organic Search";
   if (medium === "organic" && source === "bing") return "Bing Organic Search";
+  if (instagram) return medium === "organic" || medium === "organic_social" ? "Instagram Organic" : "Instagram";
   if (utmKeys.some(key => tags[key])) return "Other Campaign Traffic";
   if (touch.referrer) {
     const host = new URL(touch.referrer).hostname.replace(/\.$/, "");
     if (/^(www\.)?google\.(com|co\.uk|ca|de|fr|co\.in|com\.au|com\.pk|co\.jp)$/.test(host)) return "Google Organic Search";
     if (/^(www\.)?bing\.com$/.test(host)) return "Bing Organic Search";
+    if (/^(?:[a-z\d-]+\.)*instagram\.com$/.test(host)) return "Instagram Referral";
     return "Referral Website";
   }
   return tags.fbclid ? "Meta Link Traffic" : direct;

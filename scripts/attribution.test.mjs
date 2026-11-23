@@ -114,6 +114,16 @@ assert.match(await submit(client), /Latest Touch: Referral Website/);
 client = await land("/contact-us", "https://www.google.com.example.net/");
 assert.match(await submit(client), /Latest Touch: Referral Website/);
 
+client = await land("/?utm_source=instagram&utm_medium=organic_social&utm_campaign=profile", "");
+window.location = new URL("/get-a-quote", origin);
+assert.match(await submit(client), /Latest Touch: Instagram Organic[\s\S]*UTM Campaign: profile/);
+client = await land("/", "https://l.instagram.com/");
+assert.match(await submit(client), /Latest Touch: Instagram Referral/);
+client = await land("/?utm_source=instagram&utm_medium=paid_social");
+assert.match(await submit(client), /Latest Touch: Instagram Ads/);
+client = await land("/", "https://instagram.com.example.net/");
+assert.match(await submit(client), /Latest Touch: Referral Website/);
+
 client.setAttributionConsent(false);
 assert.equal(storage.size, 0);
 for (const source of ["homepage", "get-a-quote", "contact-us", "quote-popup"]) {
