@@ -124,8 +124,23 @@ assert.match(await submit(client), /Latest Touch: Instagram Ads/);
 client = await land("/", "https://instagram.com.example.net/");
 assert.match(await submit(client), /Latest Touch: Referral Website/);
 
+storage.clear();
+const instagramId = "PAdGRleAVxPZ_" + "0123456789_-".repeat(19);
+const instagramBio = "/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=" + instagramId;
+client = await land(instagramBio);
+assert.equal(client.attributionConsent(), "unset");
+assert.match(await submit(client), /Traffic Source: Direct \/ Unknown/);
+client.setAttributionConsent(true, true);
+window.location = new URL("/get-a-quote", origin);
+message = await submit(client);
+assert.match(message, /Traffic Source: Instagram\n[\s\S]*First Landing Page: \/\n[\s\S]*Submission Page: \/get-a-quote/);
+assert.match(message, /UTM Source: ig\nUTM Medium: social\nUTM Campaign: Not available\nUTM Content: link_in_bio/);
+assert.ok(message.includes("fbclid: " + instagramId));
+
 client.setAttributionConsent(false);
-assert.equal(storage.size, 0);
+assert.equal(storage.has("cpa-attribution"), false);
+client = await land(instagramBio);
+assert.equal(client.attributionConsent(), "declined");
 for (const source of ["homepage", "get-a-quote", "contact-us", "quote-popup"]) {
   assert.match(await submit(client, source), /Traffic Source: Direct \/ Unknown[\s\S]*UTM Source: Not available/);
 }

@@ -5,7 +5,8 @@ import { cleanCampaign, cleanPage, cleanReferrer, parseAttribution, type Attribu
 const consentKey = "cpa-attribution-consent";
 const historyKey = "cpa-attribution";
 const consentEvent = "cpa-attribution-consent-change";
-let memoryConsent = false;
+type Consent = "granted" | "declined" | "unset";
+let memoryConsent: Consent | undefined;
 let memoryHistory: Attribution | undefined;
 let historyWriteFailed = false;
 let lastArrival: string | undefined;
@@ -16,24 +17,30 @@ export function privacySignalEnabled() {
     navigator.doNotTrack === "1";
 }
 
-export function attributionAllowed() {
-  if (privacySignalEnabled()) return false;
+export function attributionConsent(): Consent {
+  if (privacySignalEnabled()) return "declined";
+  if (memoryConsent) return memoryConsent;
   try {
-    return localStorage.getItem(consentKey) === "granted";
+    const value = localStorage.getItem(consentKey);
+    return value === "granted" || value === "declined" ? value : "unset";
   } catch {
-    return memoryConsent;
+    return "unset";
   }
 }
 
-export function setAttributionConsent(allowed: boolean) {
-  memoryConsent = allowed && !privacySignalEnabled();
+export function attributionAllowed() {
+  return attributionConsent() === "granted";
+}
+
+export function setAttributionConsent(allowed: boolean, captureCurrentPage = false) {
+  const consent = allowed && !privacySignalEnabled() ? "granted" : "declined";
   try {
-    if (memoryConsent) localStorage.setItem(consentKey, "granted");
-    else localStorage.removeItem(consentKey);
+    localStorage.setItem(consentKey, consent);
+    memoryConsent = undefined;
   } catch {
-    // The visitor's choice still applies in this document.
+    memoryConsent = consent;
   }
-  if (!memoryConsent) captureAttribution();
+  if (consent === "declined" || captureCurrentPage) captureAttribution();
   window.dispatchEvent(new Event(consentEvent));
 }
 
