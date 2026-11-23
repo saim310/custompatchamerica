@@ -48,12 +48,12 @@ export async function POST(request: Request) {
   const bytes = artwork ? new Uint8Array(await artwork.arrayBuffer()) : null;
   if (artwork && bytes && !validArtworkSignature(bytes, artwork.type)) return reply({ error: "The artwork file does not match its format.", errors: { artwork: "Upload a valid PNG, JPG, WebP or PDF." } }, 422);
   const submittedSource = String(form.get("source"));
-  const source = ["get-a-quote", "contact-us", "homepage"].includes(submittedSource) ? submittedSource : "embroidered-patches";
+  const source = ["get-a-quote", "contact-us", "homepage", "quote-popup"].includes(submittedSource) ? submittedSource : "embroidered-patches";
   const id = randomUUID();
   const createdAt = new Date().toISOString();
   const safeName = artwork?.name.replace(/[^a-zA-Z0-9._-]/g, "_").slice(-120);
   try {
-    if (process.env.RESEND_API_KEY || process.env.RESEND_FROM_EMAIL || process.env.RESEND_TO_EMAIL) {
+    if (source === "quote-popup" || process.env.RESEND_API_KEY || process.env.RESEND_FROM_EMAIL || process.env.RESEND_TO_EMAIL) {
       const key = process.env.RESEND_API_KEY?.trim();
       const from = process.env.RESEND_FROM_EMAIL?.trim();
       const to = process.env.RESEND_TO_EMAIL?.split(",").map(value => value.trim()).filter(Boolean);

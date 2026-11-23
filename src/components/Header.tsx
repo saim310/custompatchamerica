@@ -4,6 +4,7 @@ import Image from "next/image";
 import headerLogo from "../../public/images/Custom Patch America Eagle Logoo.png";
 import { ChevronDown, Mail, Menu, Phone, X } from "lucide-react";
 import { useState } from "react";
+import styles from "./Header.module.css";
 
 const baseNavigation = [
   { label: "Home", href: "#top" },
@@ -37,13 +38,24 @@ export default function Header({ servicePage = false }: { servicePage?: boolean 
   return (
     <header className="relative z-20 w-full border-t border-[#031832] bg-white" style={{ fontFamily: "Poppins, Arial, sans-serif" }}>
       <div aria-label="Announcements and contact information" className="bg-[#143d69] px-3 py-2 text-white sm:px-6">
-        <div className="mx-auto grid max-w-[1440px] grid-cols-2 items-center gap-x-4 gap-y-2 text-[11px] leading-5 max-md:grid-cols-[1fr_auto] max-md:gap-x-2 max-md:gap-y-1.5 max-md:text-[10px] max-md:leading-4 sm:text-[12px] lg:grid-cols-[1fr_auto_1fr] lg:text-[13px]">
+        <div className={`${styles.announcementViewport} md:hidden`}>
+          <div className={`${styles.announcementTrack} flex w-max items-center justify-between gap-4 whitespace-nowrap text-[11px] font-medium leading-5`}>
+            <a href="mailto:info@custompatchamerica.com" className="inline-flex items-center gap-1 hover:underline">
+              <Mail size={12} aria-hidden="true" />info@custompatchamerica.com
+            </a>
+            <p>Bulk discounts &middot; Free mockups &middot; 20% OFF first order</p>
+            <a href="tel:+15097432605" className="inline-flex items-center gap-1 hover:underline">
+              <Phone size={12} aria-hidden="true" />+1 (509) 743-2605
+            </a>
+          </div>
+        </div>
+        <div className="mx-auto hidden max-w-[1440px] grid-cols-2 items-center gap-x-4 gap-y-2 text-[12px] leading-5 md:grid lg:grid-cols-[1fr_auto_1fr] lg:text-[13px]">
           <a href="mailto:info@custompatchamerica.com" className="inline-flex items-center gap-2 justify-self-start font-semibold hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white max-md:gap-1 max-md:whitespace-nowrap max-md:font-medium max-md:[&_svg]:size-3">
             <Mail size={14} className="shrink-0" aria-hidden="true" />info@custompatchamerica.com
           </a>
-          <p className="col-span-2 row-start-2 text-center font-medium lg:col-span-1 lg:col-start-2 lg:row-start-1"><span className="md:hidden">Bulk discounts &middot; Free mockups &middot; 20% OFF first order</span><span className="hidden md:inline">Exclusive Bulk Discounts | Free Digital Mockups + 20% OFF your first order</span></p>
-          <a href="tel:+18608351486" className="col-start-2 row-start-1 inline-flex items-center gap-2 justify-self-end whitespace-nowrap font-semibold hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white lg:col-start-3 max-md:gap-1 max-md:font-medium max-md:[&_svg]:size-3">
-            <Phone size={14} className="shrink-0" aria-hidden="true" />+1 (860) 835-1486
+          <p className="col-span-2 row-start-2 text-center font-medium lg:col-span-1 lg:col-start-2 lg:row-start-1">Exclusive Bulk Discounts | Free Digital Mockups + 20% OFF your first order</p>
+          <a href="tel:+15097432605" className="col-start-2 row-start-1 inline-flex items-center gap-2 justify-self-end whitespace-nowrap font-semibold hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white lg:col-start-3 max-md:gap-1 max-md:font-medium max-md:[&_svg]:size-3">
+            <Phone size={14} className="shrink-0" aria-hidden="true" />+1 (509) 743-2605
           </a>
         </div>
       </div>

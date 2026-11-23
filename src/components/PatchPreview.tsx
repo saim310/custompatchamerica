@@ -1,9 +1,24 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useId, useState } from "react";
+import chenillePreview from "../../public/images/patch-preview/Chinelle-Preview.png";
+import embroideredPreview from "../../public/images/patch-preview/Embroidered-Preview.png";
+import leatherPreview from "../../public/images/patch-preview/Leather-Preview.png";
+import printedPreview from "../../public/images/patch-preview/Printed-Preview.png";
+import pvcPreview from "../../public/images/patch-preview/PVC-Preview.png";
+import wovenPreview from "../../public/images/patch-preview/Woven-Preview.png";
 
 const patchTypes = ["Embroidered", "PVC", "Printed", "Woven", "Chenille", "Leather"] as const;
+
+const previewImages = {
+  Embroidered: embroideredPreview,
+  PVC: pvcPreview,
+  Printed: printedPreview,
+  Woven: wovenPreview,
+  Chenille: chenillePreview,
+  Leather: leatherPreview,
+};
 
 const patchFilters: Record<(typeof patchTypes)[number], string> = {
   Embroidered: "none",
@@ -17,9 +32,42 @@ const patchFilters: Record<(typeof patchTypes)[number], string> = {
 export default function PatchPreview() {
   const [selectedType, setSelectedType] = useState<(typeof patchTypes)[number]>("Embroidered");
   const [comparisonPosition, setComparisonPosition] = useState(50);
+  const previewImage = previewImages[selectedType];
+  const sketchFilter = useId();
 
   return (
     <section id="patch-preview" className="bg-white section-spacing">
+      <svg aria-hidden="true" width="0" height="0" className="pointer-events-none absolute">
+        <defs>
+          <filter id={sketchFilter} colorInterpolationFilters="sRGB">
+            <feFlood floodColor="white" result="paper" />
+            <feComposite in="SourceGraphic" in2="paper" operator="over" />
+            <feColorMatrix type="saturate" values="0" result="grayscale" />
+            <feGaussianBlur stdDeviation="0.85" result="softened" />
+            <feBlend in="grayscale" in2="softened" mode="difference" />
+            <feComponentTransfer result="edges">
+              <feFuncR type="linear" slope="-5.5" intercept="1.04" />
+              <feFuncG type="linear" slope="-5.5" intercept="1.04" />
+              <feFuncB type="linear" slope="-5.5" intercept="1.04" />
+            </feComponentTransfer>
+            <feTurbulence type="fractalNoise" baseFrequency="0.18 0.38" numOctaves="2" seed="7" result="grain" />
+            <feDisplacementMap in="edges" in2="grain" scale="1.15" xChannelSelector="R" yChannelSelector="G" result="pencilLines" />
+            <feOffset in="pencilLines" dx="0.7" dy="-0.55" />
+            <feComponentTransfer result="lightStrokes">
+              <feFuncR type="linear" slope="0.28" intercept="0.72" />
+              <feFuncG type="linear" slope="0.28" intercept="0.72" />
+              <feFuncB type="linear" slope="0.28" intercept="0.72" />
+            </feComponentTransfer>
+            <feBlend in="pencilLines" in2="lightStrokes" mode="multiply" result="linework" />
+            <feComponentTransfer in="grayscale" result="shading">
+              <feFuncR type="linear" slope="0.10" intercept="0.90" />
+              <feFuncG type="linear" slope="0.10" intercept="0.90" />
+              <feFuncB type="linear" slope="0.10" intercept="0.90" />
+            </feComponentTransfer>
+            <feBlend in="linework" in2="shading" mode="multiply" />
+          </filter>
+        </defs>
+      </svg>
       <div className="mx-auto max-w-[1200px] text-center">
         <h2 className="section-heading text-navy">
           Turn Your Artwork Into a <span className="text-[#ed172b]">Real Patch</span>
@@ -52,7 +100,7 @@ export default function PatchPreview() {
         <div className="relative mt-9 overflow-hidden rounded-[20px] bg-white shadow-[0_14px_42px_#0b25451a] max-[767px]:mt-7 max-[767px]:rounded-[16px]">
           <div className="relative aspect-[1.72/1] min-h-[300px] w-full max-[767px]:aspect-[1.05/1] max-[500px]:min-h-[270px]">
             <Image
-              src="/images/patch-preview/ride-free-embroidered.png"
+              src={previewImage}
               alt={`${selectedType} patch preview`}
               fill
               sizes="(max-width: 767px) 100vw, 1200px"
@@ -61,11 +109,12 @@ export default function PatchPreview() {
             />
             <div className="pointer-events-none absolute inset-0 overflow-hidden" style={{ clipPath: `inset(0 ${100 - comparisonPosition}% 0 0)` }}>
               <Image
-                src="/images/patch-preview/ride-free-embroidered.png"
+                src={previewImage}
                 alt=""
                 fill
                 sizes="(max-width: 767px) 100vw, 1200px"
-                className="object-contain p-[clamp(18px,3vw,40px)] grayscale contrast-125 brightness-110"
+                className="object-contain p-[clamp(18px,3vw,40px)]"
+                style={{ filter: `url("#${sketchFilter}")` }}
               />
             </div>
 

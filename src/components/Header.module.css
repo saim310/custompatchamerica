@@ -1,0 +1,26 @@
+.announcementViewport {
+  container-type: inline-size;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .announcementViewport:not(:focus-within) {
+    overflow: hidden;
+  }
+
+  .announcementViewport:not(:focus-within) .announcementTrack {
+    min-width: calc(100cqw + 2rem);
+    animation: scroll-announcement 10s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes scroll-announcement {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(100cqw - 100%));
+  }
+}
