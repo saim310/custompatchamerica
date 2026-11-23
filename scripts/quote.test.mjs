@@ -8,7 +8,12 @@ import ts from "typescript";
 const moduleURL = code => `data:text/javascript;base64,${Buffer.from(code).toString("base64")}`;
 const compile = code => ts.transpileModule(code, { compilerOptions: { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.ES2022 } }).outputText;
 const validationURL = moduleURL(compile(await readFile("src/lib/quote-validation.ts", "utf8")));
-const source = (await readFile("src/app/api/quotes/route.ts", "utf8")).replace('"@/lib/quote-validation"', JSON.stringify(validationURL));
+const attributionURL = moduleURL(compile(await readFile("src/lib/attribution.ts", "utf8")));
+const emailURL = moduleURL(compile((await readFile("src/lib/quote-email.ts", "utf8"))
+  .replace('"./attribution"', JSON.stringify(attributionURL))));
+const source = (await readFile("src/app/api/quotes/route.ts", "utf8"))
+  .replace('"@/lib/quote-validation"', JSON.stringify(validationURL))
+  .replace('"@/lib/quote-email"', JSON.stringify(emailURL));
 const { POST } = await import(moduleURL(compile(source)));
 await mkdir("artifacts", { recursive: true });
 const directory = await mkdtemp(path.resolve("artifacts/quote-test-"));
@@ -114,10 +119,15 @@ test("Resend delivers every form source with reply-to and artwork; failures neve
       const bytes = Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]);
       const data = form({ source });
       data.set("artwork", new File([bytes], "../design.png", { type: "image/png" }));
+      const sent = [];
       globalThis.fetch = async (url, init) => {
         assert.equal(url, "https://api.resend.com/emails");
         assert.equal(init.headers.Authorization, "Bearer re_test");
         const payload = JSON.parse(init.body);
+        sent.push(payload);
+        if (init.headers["Idempotency-Key"].startsWith("confirmation/")) {
+          return Response.json({ id: "confirmation-receipt" });
+        }
         assert.equal(payload.reply_to, "quote-test@example.invalid");
         assert.deepEqual(payload.to, ["sales@example.invalid", "team@example.invalid"]);
         assert.ok(payload.text.includes("source: " + source));
@@ -127,7 +137,17 @@ test("Resend delivers every form source with reply-to and artwork; failures neve
         return Response.json({ id: "test-receipt" });
       };
       assert.equal((await POST(request(data))).status, 201);
+      assert.equal(sent.length, 2);
+      assert.deepEqual(sent[1].to, ["quote-test@example.invalid"]);
+      assert.equal(sent[1].attachments, undefined);
     }
+    let attempts = 0;
+    globalThis.fetch = async () => ++attempts === 1
+      ? Response.json({ id: "test-receipt" })
+      : new Response(null, { status: 403 });
+    assert.equal((await POST(request(form()))).status, 201);
+    assert.equal(attempts, 2);
+    assert.equal((await POST(request(form({ email: "one,two@example.invalid" })))).status, 422);
     globalThis.fetch = async () => new Response(null, { status: 403 });
     assert.equal((await POST(request(form()))).status, 502);
     globalThis.fetch = async () => { throw new Error("Network unavailable"); };

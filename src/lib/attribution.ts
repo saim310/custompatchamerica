@@ -105,11 +105,11 @@ function trafficSource(touch?: Touch): string {
   return tags.fbclid ? "Meta Link Traffic" : direct;
 }
 
-export function attributionEmail(value: unknown, origin: string, submittedAt: string) {
+export function attributionEmailRows(value: unknown, origin: string, submittedAt: string) {
   const parsed = parseAttribution(value, origin, Date.parse(submittedAt));
   const first = parsed?.history?.first;
   const latest = parsed?.history?.latest;
-  const line = (label: string, entry?: string) => `${label}: ${entry ?? "Not available"}`;
+  const line = (label: string, entry?: string) => [label, entry ?? "Not available"] as const;
   const touchLines = (touch?: Touch) => [
     line("Landing Page", touch?.page),
     line("Referrer", touch?.referrer),
@@ -117,18 +117,11 @@ export function attributionEmail(value: unknown, origin: string, submittedAt: st
     ...clickKeys.map(key => line(key, touch?.campaign[key])),
   ];
   return [
-    "CUSTOMER TRAFFIC SOURCE",
-    line("Traffic Source", trafficSource(latest)),
-    line("First Landing Page", first?.page),
-    line("Submission Page", parsed?.submissionPage),
-    line("First Visit", first?.at),
-    line("Submission Time", submittedAt),
-    "",
-    line("Latest Touch", latest && trafficSource(latest)),
-    line("Latest Touch Time", latest?.at),
-    ...touchLines(latest),
-    "",
-    line("First Touch", first && trafficSource(first)),
-    ...touchLines(first),
-  ].join("\n");
+    [line("Traffic Source", trafficSource(latest)), line("First Landing Page", first?.page),
+      line("Submission Page", parsed?.submissionPage), line("First Visit", first?.at),
+      line("Submission Time", submittedAt)],
+    [line("Latest Touch", latest && trafficSource(latest)), line("Latest Touch Time", latest?.at),
+      ...touchLines(latest)],
+    [line("First Touch", first && trafficSource(first)), ...touchLines(first)],
+  ];
 }

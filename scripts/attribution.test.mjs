@@ -30,12 +30,15 @@ Object.assign(process.env, {
 });
 
 let email;
+let confirmation;
 globalThis.fetch = async (url, options) => {
   if (url === "/api/quotes") return POST(new Request(origin + url, {
     ...options, headers: { Origin: origin },
   }));
   assert.equal(url, "https://api.resend.com/emails");
-  email = JSON.parse(options.body);
+  const payload = JSON.parse(options.body);
+  if (options.headers["Idempotency-Key"].startsWith("confirmation/")) confirmation = payload;
+  else email = payload;
   return Response.json({ id: "mock-receipt" });
 };
 
@@ -52,19 +55,27 @@ function enquiry(source) {
   const form = new FormData();
   for (const [key, value] of Object.entries({
     source, name: "Test Customer", email: "customer@example.com", phone: "15551234567",
-    patchType: "Embroidered", quantity: "100", backing: "Sew-On", message: "Test enquiry",
+    patchType: "Embroidered", quantity: "100", backing: "Sew-On", message: "Test enquiry\n<img src=x>",
   })) form.set(key, value);
   return form;
 }
 
 async function submit(client, source = "contact-us") {
+  confirmation = undefined;
   const response = await client.submitEnquiry(enquiry(source));
   assert.equal(response.status, 201, await response.text());
   assert.deepEqual(email.to, ["inbox@patches.example"]);
   assert.equal(email.reply_to, "customer@example.com");
   assert.match(email.text, /name: Test Customer\n[\s\S]*CUSTOMER TRAFFIC SOURCE/);
   assert.match(email.text, /Submission Time: \d{4}-\d\d-\d\dT/);
-  assert.equal(email.html, undefined);
+  assert.match(email.html, /Customer details[\s\S]*Test enquiry<br>&lt;img src=x&gt;[\s\S]*CUSTOMER TRAFFIC SOURCE/);
+  assert.equal(email.from, "Custom Patch America <website@patches.example>");
+  assert.deepEqual(confirmation.to, ["customer@example.com"]);
+  assert.equal(confirmation.from, email.from);
+  assert.equal(confirmation.reply_to, "inbox@patches.example");
+  assert.match(confirmation.html, /Thank you for reaching out/);
+  assert.doesNotMatch(confirmation.text, /CUSTOMER TRAFFIC SOURCE|Test enquiry/);
+  assert.equal(confirmation.attachments, undefined);
   return email.text;
 }
 

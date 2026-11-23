@@ -1,7 +1,7 @@
 import { randomUUID, createHash } from "node:crypto";
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
-import { attributionEmail } from "@/lib/attribution";
+import { confirmationEmail, enquiryEmail } from "@/lib/quote-email";
 import { MAX_QUOTE_BYTES, validArtworkSignature, validateQuote } from "@/lib/quote-validation";
 
 export const runtime = "nodejs";
@@ -56,21 +56,20 @@ export async function POST(request: Request) {
   try {
     if (source === "quote-popup" || process.env.RESEND_API_KEY || process.env.RESEND_FROM_EMAIL || process.env.RESEND_TO_EMAIL) {
       const key = process.env.RESEND_API_KEY?.trim();
-      const from = process.env.RESEND_FROM_EMAIL?.trim();
+      const sender = process.env.RESEND_FROM_EMAIL?.trim();
       const to = process.env.RESEND_TO_EMAIL?.split(",").map(value => value.trim()).filter(Boolean);
-      if (!key || !from || !to?.length) return reply({ error: "Online requests are temporarily unavailable. Please try again later." }, 503);
-      const customerDetails = Object.entries({ reference: id, submitted: createdAt, source, ...details })
-        .map(([label, value]) => label + ": " + value).join("\n\n");
-      const text = customerDetails + "\n\n" + attributionEmail(form.get("attribution"), expectedOrigin, createdAt);
-      const response = await fetch("https://api.resend.com/emails", {
-        method: "POST", redirect: "error", signal: AbortSignal.timeout(15000),
-        headers: { Authorization: "Bearer " + key, "Content-Type": "application/json", "Idempotency-Key": id },
-        body: JSON.stringify({ from, to, reply_to: details.email,
-          subject: "New " + (source === "contact-us" ? "contact" : "quote") + " request: " + details.patchType + " (" + details.quantity + ")",
-          text,
-          ...(artwork && bytes ? { attachments: [{ filename: safeName, content: Buffer.from(bytes).toString("base64") }] } : {}),
-        }),
+      if (!key || !sender || !to?.length) return reply({ error: "Online requests are temporarily unavailable. Please try again later." }, 503);
+      const from = sender.includes("<") ? sender : `Custom Patch America <${sender}>`;
+      const send = (message: object, idempotencyKey: string, timeout: number) => fetch("https://api.resend.com/emails", {
+        method: "POST", redirect: "error", signal: AbortSignal.timeout(timeout),
+        headers: { Authorization: "Bearer " + key, "Content-Type": "application/json", "Idempotency-Key": idempotencyKey },
+        body: JSON.stringify({ from, ...message }),
       });
+      const response = await send({
+        to, reply_to: details.email,
+        ...enquiryEmail(details, source, id, createdAt, form.get("attribution"), expectedOrigin),
+        ...(artwork && bytes ? { attachments: [{ filename: safeName, content: Buffer.from(bytes).toString("base64") }] } : {}),
+      }, id, 15000);
       if (!response.ok) {
         const failure = await response.json().catch(() => null);
         const providerMessage = typeof failure?.message === "string"
@@ -84,6 +83,17 @@ export async function POST(request: Request) {
       }
       const receipt = await response.json();
       if (typeof receipt.id !== "string" || !receipt.id) throw new Error("Missing email receipt");
+      // The enquiry is already accepted. A confirmation failure must not prompt a duplicate submission.
+      try {
+        const confirmation = await send({
+          to: [details.email], reply_to: to[0], ...confirmationEmail(id),
+        }, `confirmation/${id}`, 5000);
+        if (!confirmation.ok) {
+          console.error("Resend rejected customer confirmation", { status: confirmation.status, reference: id });
+        }
+      } catch {
+        console.error("Customer confirmation could not be sent", { reference: id });
+      }
       return reply({ id, message: "Thank you! Your request has been received. Keep your reference number for follow-up." }, 201);
     }
     if (process.env.QUOTE_WEBHOOK_URL) {

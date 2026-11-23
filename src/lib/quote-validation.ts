@@ -16,7 +16,7 @@ export function validateQuote(form: FormData): { details: QuoteDetails; errors: 
     else errors.backing = "Choose a backing option.";
   }
   if (details.name.length < 2 || details.name.length > 100) errors.name = "Enter your full name (2–100 characters).";
-  if (details.email.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(details.email)) errors.email = "Enter a valid email address.";
+  if (details.email.length > 254 || !/^[^\s@<>,;:"()\[\]\\\p{Cc}\p{Cf}]+@[a-z\d-]+(?:\.[a-z\d-]+)+$/iu.test(details.email)) errors.email = "Enter a valid email address.";
   if (details.phone.length > 40 || !/^[+\d\s().-]{7,40}$/.test(details.phone) || details.phone.replace(/\D/g, "").length < 7) errors.phone = "Enter a valid phone number.";
   if (details.company.length > 120) errors.company = "Keep the company name under 120 characters.";
   if (!PATCH_TYPES.includes(details.patchType)) errors.patchType = "Choose a patch type.";
