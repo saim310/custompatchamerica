@@ -7,6 +7,9 @@ import "@/styles/globals.css";
 export const metadata: Metadata = {
   title: "Custom Patch America | Your Idea. Our Stitch.",
   description: "High-quality custom patches for businesses, teams, events, and brands across the USA.",
+  verification: {
+    google: "3vktIbe4I2vQwJWfikl2h8t7MAWZIYS42rWEg3o7C7o",
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
